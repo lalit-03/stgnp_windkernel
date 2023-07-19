@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/home/junfeng/STGNP_release/test.py", line 24, in <module>
+    model.test()
+  File "/home/junfeng/STGNP_release/models/base_model.py", line 135, in test
+    self.forward(training=False)
+  File "/home/junfeng/STGNP_release/models/hierarchical/hierarchical_model.py", line 76, in forward
+    self.netHierarchicalNP(self.feat_context, self.pred_context, self.feat_target,
+  File "/home/junfeng/anaconda3/envs/pytorch-py311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junfeng/anaconda3/envs/pytorch-py311/lib/python3.11/site-packages/torch/nn/parallel/data_parallel.py", line 169, in forward
+    return self.module(*inputs[0], **kwargs[0])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junfeng/anaconda3/envs/pytorch-py311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junfeng/STGNP_release/models/hierarchical/hierarchical_model.py", line 164, in forward
+    p_d_c, p_d_t = self.deter(x_context, y_context, x_target, None, adj, missing_index_context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junfeng/anaconda3/envs/pytorch-py311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junfeng/STGNP_release/models/hierarchical/st_encoding.py", line 59, in forward
+    context = self.feature_embedding(context)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junfeng/anaconda3/envs/pytorch-py311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junfeng/STGNP_release/models/hierarchical/st_encoding.py", line 163, in forward
+    y = self.convolution(x)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/home/junfeng/anaconda3/envs/pytorch-py311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junfeng/anaconda3/envs/pytorch-py311/lib/python3.11/site-packages/torch/nn/modules/conv.py", line 313, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junfeng/anaconda3/envs/pytorch-py311/lib/python3.11/site-packages/torch/nn/modules/conv.py", line 309, in _conv_forward
+    return F.conv1d(input, weight, bias, self.stride,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

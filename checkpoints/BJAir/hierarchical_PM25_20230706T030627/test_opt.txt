@@ -1,0 +1,40 @@
+----------------- Options ---------------
+               batch_size: 128                           
+          checkpoints_dir: ./checkpoints/BJAir           	[default: ./checkpoints]
+                   config: config1                       
+            covariate_dim: 30                            
+             dataset_mode: BJAir                         	[default: ]
+               delete_col: ['u_speed', 'v_speed', 'latitude', 'longitude']
+            enable_visual: False                         
+                    epoch: best                          	[default: latest]
+                file_time: 20230706T030627               	[default: ]
+                  gpu_ids: 0                             	[default: -1]
+                init_gain: 0.02                          
+                init_type: xavier                        
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+         max_dataset_size: inf                           
+                    model: hierarchical                  	[default: ]
+                     name: hierarchical_PM25_20230706T030627	[default: None]
+              num_threads: 0                             
+                    phase: test                          
+                pred_attr: PM25_Concentration            
+               print_freq: 10                            
+                     seed: 2023                          
+           serial_batches: True                          
+              spatial_dim: 16                            
+                    t_len: 24                            
+                  use_adj: True                          
+                  verbose: False                         
+                    y_dim: 1                             
+----------------- End -------------------
+----------------- Model Configurations ---------------
+             tcn_channels: [16, 32, 64]                  
+          latent_channels: [16, 32, 64]                  
+              emd_channel: 16                            
+        num_latent_layers: 1                             
+   observation_hidden_dim: 128                           
+   num_observation_layers: 3                             
+          tcn_kernel_size: 3                             
+                  dropout: 0.1                           
+----------------- End -------------------

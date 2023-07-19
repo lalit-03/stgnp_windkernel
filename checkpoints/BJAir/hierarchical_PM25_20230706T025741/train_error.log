@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "/home/gnn/STGNP_copy/train.py", line 44, in <module>
+    model.optimize_parameters()   # calculate loss functions, get gradients, update network weights
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/STGNP_copy/models/hierarchical/hierarchical_model.py", line 157, in optimize_parameters
+    self.forward()
+  File "/home/gnn/STGNP_copy/models/hierarchical/hierarchical_model.py", line 91, in forward
+    self.netHierarchicalNP(self.feat_context, self.pred_context, self.feat_target,
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/nn/parallel/data_parallel.py", line 169, in forward
+    return self.module(*inputs[0], **kwargs[0])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/STGNP_copy/models/hierarchical/hierarchical_model.py", line 253, in forward
+    adj = torch.vmap(process_batch, in_dims=(0, 0, 0))(target_index, context_index, wind_mode)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/_functorch/vmap.py", line 434, in wrapped
+    return _flat_vmap(
+           ^^^^^^^^^^^
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/_functorch/vmap.py", line 39, in fn
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/_functorch/vmap.py", line 619, in _flat_vmap
+    batched_outputs = func(*batched_inputs, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/STGNP_copy/models/hierarchical/hierarchical_model.py", line 251, in process_batch
+    return process_iteration(targets, contexts, winds, A)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/STGNP_copy/models/hierarchical/hierarchical_model.py", line 242, in process_iteration
+    A_ = get_wind_A(winds, A)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/STGNP_copy/models/hierarchical/hierarchical_model.py", line 235, in get_wind_A
+    values = torch.stack([(compute_aij(xi, xj), xi, xj) for xi in range(batch_size) for xj in range(batch_size)]).to(device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected Tensor as element 0 in argument 0, but got tuple

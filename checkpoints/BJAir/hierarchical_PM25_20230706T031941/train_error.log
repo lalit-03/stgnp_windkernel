@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "/home/gnn/STGNP_copy/train.py", line 44, in <module>
+    model.optimize_parameters()   # calculate loss functions, get gradients, update network weights
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/STGNP_copy/models/hierarchical/hierarchical_model.py", line 154, in optimize_parameters
+    self.forward()
+  File "/home/gnn/STGNP_copy/models/hierarchical/hierarchical_model.py", line 88, in forward
+    self.netHierarchicalNP(self.feat_context, self.pred_context, self.feat_target,
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/nn/parallel/data_parallel.py", line 169, in forward
+    return self.module(*inputs[0], **kwargs[0])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/STGNP_copy/models/hierarchical/hierarchical_model.py", line 192, in forward
+    adj = torch.vmap(process_data, in_dims=(0, 0, None))(target_index, context_index, A)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/_functorch/vmap.py", line 434, in wrapped
+    return _flat_vmap(
+           ^^^^^^^^^^^
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/_functorch/vmap.py", line 39, in fn
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/mambaforge/envs/stgnp/lib/python3.11/site-packages/torch/_functorch/vmap.py", line 619, in _flat_vmap
+    batched_outputs = func(*batched_inputs, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gnn/STGNP_copy/models/hierarchical/hierarchical_model.py", line 187, in process_data
+    A_2hop = torch.mm(A_, A_)[targets, :][:, contexts].unsqueeze(0)
+             ^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (35x2 and 35x2)

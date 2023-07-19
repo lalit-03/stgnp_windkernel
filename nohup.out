@@ -1,0 +1,323 @@
+./train.sh: 8: ./train.sh: Syntax error: Bad for loop variable
+./train.sh: 8: ./train.sh: Syntax error: Bad for loop variable
+./train.sh: 8: ./train.sh: Syntax error: Bad for loop variable
+./train.sh: 8: ./train.sh: Syntax error: Bad for loop variable
+No module named 'models.hierarchical_model'
+----------------- Options ---------------
+               batch_size: 128                           
+                     beta: 1.0                           
+          checkpoints_dir: ./checkpoints/BJAir           	[default: ./checkpoints]
+                   config: config1                       
+           continue_train: False                         
+            covariate_dim: 30                            
+             dataset_mode: BJAir                         	[default: ]
+               delete_col: ['u_speed', 'v_speed', 'latitude', 'longitude']
+                  dropout: 0.1                           
+        enable_curriculum: False                         
+           enable_neptune: False                         
+               enable_val: True                          	[default: False]
+            enable_visual: False                         
+                    epoch: latest                        
+              epoch_count: 0                             
+          eval_epoch_freq: 1                             
+                file_time: 20230701T023155               	[default: None]
+                  gpu_ids: 0                             	[default: -1]
+                init_gain: 0.02                          
+                init_type: xavier                        
+                  isTrain: True                          	[default: None]
+                load_iter: 0                             	[default: 0]
+                       lr: 0.001                         
+           lr_decay_iters: 50                            
+                lr_policy: linear                        
+         max_dataset_size: inf                           
+                    model: hierarchical                  	[default: ]
+                 n_epochs: 20                            
+           n_epochs_decay: 10                            
+          n_epochs_target: 100                           
+ n_epochs_target_increase: 150                           
+                     name: hierarchical_PM25_20230701T023155	[default: None]
+          neptune_project:                               
+            neptune_token:                               
+              num_threads: 4                             	[default: 0]
+         num_train_target: 3                             
+     num_train_target_end: 6                             
+                    phase: train                         
+                pred_attr: PM25_Concentration            
+               print_freq: 20                            
+                save_best: True                          	[default: False]
+          save_epoch_freq: 100                           
+                     seed: 5                             	[default: 2023]
+           serial_batches: False                         
+              spatial_dim: 16                            
+                    t_len: 24                            
+              total_iters: 0                             
+                  use_adj: True                          
+                  verbose: False                         
+                    y_dim: 1                             
+----------------- End -------------------
+----------------- Model Configurations ---------------
+             tcn_channels: [16, 32, 64]                  
+          latent_channels: [16, 32, 64]                  
+              emd_channel: 16                            
+        num_latent_layers: 1                             
+   observation_hidden_dim: 128                           
+   num_observation_layers: 3                             
+          tcn_kernel_size: 3                             
+                  dropout: 0.1                           
+----------------- End -------------------
+Loading station locations...
+Computing normalization info...
+Loading air quality features...
+Data format check passed!!!
+dataset [BJAirDataset] for [train] was created
+The number of training samples = 6107
+No module named 'models.hierarchical_model'
+Loading station locations...
+Computing normalization info...
+Loading air quality features...
+Data format check passed!!!
+dataset [BJAirDataset] for [val] was created
+The number of validation samples = 36
+No module named 'models.hierarchical_model'
+initialize network with xavier
+model [HierarchicalModel] was created
+---------- Networks initialized -------------
+[Network HierarchicalNP] Total number of parameters : 0.108 M
+-----------------------------------------------
+(epoch: 0, iters: 20, time: 0.001, data: 0.230) nll: 26.99011 kl: 0.00000 
+(epoch: 0, iters: 40, time: 0.002, data: 0.007) nll: 24.00915 kl: 0.00000 
+(epoch: 0, iters: 48, time: 0.319) MAE: 69.16621 RMSE: 90.65326 MAPE: 2.56982 
+saving the best model at the end of epoch 0, iters 48
+saving the model at the end of epoch 0, iters 48
+End of epoch 0 / 30 	 Time Taken: 11 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 1, iters: 60, time: 0.002, data: 0.010) nll: 25.65087 kl: 0.00000 
+(epoch: 1, iters: 80, time: 0.002, data: 0.008) nll: 26.20458 kl: 0.00002 
+(epoch: 1, iters: 96, time: 0.275) MAE: 69.33958 RMSE: 92.72263 MAPE: 2.42290 
+End of epoch 1 / 30 	 Time Taken: 11 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 2, iters: 100, time: 0.002, data: 0.007) nll: 23.32771 kl: 0.34620 
+(epoch: 2, iters: 120, time: 0.002, data: 0.011) nll: 22.85463 kl: 0.30752 
+(epoch: 2, iters: 140, time: 0.002, data: 0.007) nll: 19.55020 kl: 0.44945 
+(epoch: 2, iters: 144, time: 0.289) MAE: 48.92266 RMSE: 60.64998 MAPE: 2.38336 
+saving the best model at the end of epoch 2, iters 144
+End of epoch 2 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 3, iters: 160, time: 0.001, data: 0.007) nll: 19.57003 kl: 0.54111 
+(epoch: 3, iters: 180, time: 0.002, data: 0.004) nll: 17.62020 kl: 0.21300 
+(epoch: 3, iters: 192, time: 0.272) MAE: 39.55231 RMSE: 51.19371 MAPE: 2.13634 
+saving the best model at the end of epoch 3, iters 192
+End of epoch 3 / 30 	 Time Taken: 9 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 4, iters: 200, time: 0.001, data: 0.008) nll: 18.02210 kl: 0.38981 
+(epoch: 4, iters: 220, time: 0.002, data: 0.005) nll: 17.50456 kl: 0.58408 
+(epoch: 4, iters: 240, time: 0.001, data: 0.005) nll: 15.43107 kl: 0.29976 
+(epoch: 4, iters: 240, time: 0.263) MAE: 39.04607 RMSE: 50.90340 MAPE: 1.94889 
+saving the best model at the end of epoch 4, iters 240
+End of epoch 4 / 30 	 Time Taken: 9 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 5, iters: 260, time: 0.002, data: 0.268) nll: 17.39424 kl: 0.57306 
+(epoch: 5, iters: 280, time: 0.001, data: 0.007) nll: 14.42095 kl: 0.32316 
+(epoch: 5, iters: 288, time: 0.264) MAE: 35.24649 RMSE: 47.11388 MAPE: 1.79305 
+saving the best model at the end of epoch 5, iters 288
+End of epoch 5 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 6, iters: 300, time: 0.002, data: 0.009) nll: 15.06469 kl: 0.32782 
+(epoch: 6, iters: 320, time: 0.002, data: 0.008) nll: 16.08133 kl: 0.50451 
+(epoch: 6, iters: 336, time: 0.263) MAE: 32.46742 RMSE: 44.47871 MAPE: 1.64690 
+saving the best model at the end of epoch 6, iters 336
+End of epoch 6 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 7, iters: 340, time: 0.002, data: 0.008) nll: 14.39406 kl: 0.42516 
+(epoch: 7, iters: 360, time: 0.002, data: 0.015) nll: 13.29711 kl: 0.40057 
+(epoch: 7, iters: 380, time: 0.002, data: 0.008) nll: 13.21150 kl: 0.44366 
+(epoch: 7, iters: 384, time: 0.263) MAE: 31.83452 RMSE: 44.27496 MAPE: 1.51488 
+saving the best model at the end of epoch 7, iters 384
+End of epoch 7 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 8, iters: 400, time: 0.002, data: 0.007) nll: 13.50396 kl: 0.46545 
+(epoch: 8, iters: 420, time: 0.002, data: 0.008) nll: 12.82363 kl: 0.53240 
+(epoch: 8, iters: 432, time: 0.266) MAE: 29.64132 RMSE: 42.20191 MAPE: 1.39595 
+saving the best model at the end of epoch 8, iters 432
+End of epoch 8 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 9, iters: 440, time: 0.002, data: 0.008) nll: 12.44506 kl: 0.45673 
+(epoch: 9, iters: 460, time: 0.002, data: 0.008) nll: 13.42152 kl: 0.53325 
+(epoch: 9, iters: 480, time: 0.001, data: 0.007) nll: 10.42823 kl: 0.35468 
+(epoch: 9, iters: 480, time: 0.287) MAE: 28.30683 RMSE: 41.43891 MAPE: 1.28526 
+saving the best model at the end of epoch 9, iters 480
+End of epoch 9 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 10, iters: 500, time: 0.002, data: 0.243) nll: 12.70633 kl: 0.81649 
+(epoch: 10, iters: 520, time: 0.002, data: 0.008) nll: 11.41190 kl: 0.65127 
+(epoch: 10, iters: 528, time: 0.267) MAE: 28.83778 RMSE: 42.44651 MAPE: 1.18779 
+End of epoch 10 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 11, iters: 540, time: 0.001, data: 0.008) nll: 11.98560 kl: 0.57176 
+(epoch: 11, iters: 560, time: 0.002, data: 0.006) nll: 11.21503 kl: 0.81492 
+(epoch: 11, iters: 576, time: 0.287) MAE: 25.24277 RMSE: 38.97108 MAPE: 1.09983 
+saving the best model at the end of epoch 11, iters 576
+End of epoch 11 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 12, iters: 580, time: 0.002, data: 0.007) nll: 10.51776 kl: 0.59239 
+(epoch: 12, iters: 600, time: 0.001, data: 0.007) nll: 11.08698 kl: 0.79581 
+(epoch: 12, iters: 620, time: 0.001, data: 0.006) nll: 10.32828 kl: 0.87392 
+(epoch: 12, iters: 624, time: 0.275) MAE: 25.13538 RMSE: 39.45920 MAPE: 1.01324 
+End of epoch 12 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 13, iters: 640, time: 0.002, data: 0.009) nll: 9.72000 kl: 0.73182 
+(epoch: 13, iters: 660, time: 0.002, data: 0.008) nll: 9.40038 kl: 0.87123 
+(epoch: 13, iters: 672, time: 0.282) MAE: 26.86805 RMSE: 41.12220 MAPE: 0.98693 
+End of epoch 13 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 14, iters: 680, time: 0.001, data: 0.013) nll: 9.40124 kl: 0.69534 
+(epoch: 14, iters: 700, time: 0.002, data: 0.007) nll: 8.98022 kl: 1.05299 
+(epoch: 14, iters: 720, time: 0.001, data: 0.008) nll: 8.90724 kl: 0.86250 
+(epoch: 14, iters: 720, time: 0.270) MAE: 22.50395 RMSE: 37.34293 MAPE: 0.87170 
+saving the best model at the end of epoch 14, iters 720
+End of epoch 14 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 15, iters: 740, time: 0.001, data: 0.241) nll: 9.15303 kl: 1.13004 
+(epoch: 15, iters: 760, time: 0.001, data: 0.008) nll: 7.49435 kl: 0.79536 
+(epoch: 15, iters: 768, time: 0.270) MAE: 22.17458 RMSE: 37.56778 MAPE: 0.80761 
+End of epoch 15 / 30 	 Time Taken: 9 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 16, iters: 780, time: 0.002, data: 0.010) nll: 7.16130 kl: 0.73936 
+(epoch: 16, iters: 800, time: 0.002, data: 0.008) nll: 8.16475 kl: 1.26133 
+(epoch: 16, iters: 816, time: 0.256) MAE: 23.63373 RMSE: 38.77223 MAPE: 0.78054 
+End of epoch 16 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 17, iters: 820, time: 0.002, data: 0.009) nll: 7.15817 kl: 0.76884 
+(epoch: 17, iters: 840, time: 0.002, data: 0.011) nll: 6.10545 kl: 0.98082 
+(epoch: 17, iters: 860, time: 0.002, data: 0.010) nll: 7.85787 kl: 1.44428 
+(epoch: 17, iters: 864, time: 0.285) MAE: 22.16246 RMSE: 37.75424 MAPE: 0.71489 
+End of epoch 17 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 18, iters: 880, time: 0.002, data: 0.010) nll: 5.70196 kl: 1.00214 
+(epoch: 18, iters: 900, time: 0.002, data: 0.010) nll: 6.48750 kl: 0.96893 
+(epoch: 18, iters: 912, time: 0.264) MAE: 20.84390 RMSE: 36.74822 MAPE: 0.67336 
+saving the best model at the end of epoch 18, iters 912
+End of epoch 18 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 19, iters: 920, time: 0.001, data: 0.010) nll: 6.29290 kl: 1.43960 
+(epoch: 19, iters: 940, time: 0.002, data: 0.009) nll: 4.79046 kl: 1.04690 
+(epoch: 19, iters: 960, time: 0.001, data: 0.008) nll: 2.83041 kl: 0.79639 
+(epoch: 19, iters: 960, time: 0.250) MAE: 21.37789 RMSE: 37.67432 MAPE: 0.63710 
+End of epoch 19 / 30 	 Time Taken: 10 sec
+learning rate 0.0010000 -> 0.0010000
+(epoch: 20, iters: 980, time: 0.001, data: 0.244) nll: 4.35008 kl: 1.02882 
+(epoch: 20, iters: 1000, time: 0.001, data: 0.006) nll: 3.58343 kl: 1.16259 
+(epoch: 20, iters: 1008, time: 0.216) MAE: 21.79183 RMSE: 38.53173 MAPE: 0.57584 
+End of epoch 20 / 30 	 Time Taken: 9 sec
+learning rate 0.0010000 -> 0.0009091
+(epoch: 21, iters: 1020, time: 0.001, data: 0.008) nll: 3.86765 kl: 1.70511 
+(epoch: 21, iters: 1040, time: 0.001, data: 0.008) nll: 3.23165 kl: 1.39718 
+(epoch: 21, iters: 1056, time: 0.251) MAE: 23.73875 RMSE: 41.16413 MAPE: 0.47076 
+End of epoch 21 / 30 	 Time Taken: 9 sec
+learning rate 0.0009091 -> 0.0008182
+(epoch: 22, iters: 1060, time: 0.002, data: 0.009) nll: 1.30561 kl: 1.16622 
+(epoch: 22, iters: 1080, time: 0.002, data: 0.010) nll: 3.33103 kl: 1.99593 
+(epoch: 22, iters: 1100, time: 0.002, data: 0.008) nll: 1.16831 kl: 2.42837 
+(epoch: 22, iters: 1104, time: 0.267) MAE: 23.58867 RMSE: 41.27801 MAPE: 0.40854 
+End of epoch 22 / 30 	 Time Taken: 10 sec
+learning rate 0.0008182 -> 0.0007273
+(epoch: 23, iters: 1120, time: 0.002, data: 0.009) nll: 1.37498 kl: 2.15470 
+(epoch: 23, iters: 1140, time: 0.002, data: 0.009) nll: 0.07468 kl: 1.66622 
+(epoch: 23, iters: 1152, time: 0.257) MAE: 20.84130 RMSE: 38.42848 MAPE: 0.38071 
+End of epoch 23 / 30 	 Time Taken: 10 sec
+learning rate 0.0007273 -> 0.0006364
+(epoch: 24, iters: 1160, time: 0.002, data: 0.008) nll: -0.26785 kl: 2.00694 
+(epoch: 24, iters: 1180, time: 0.001, data: 0.010) nll: 0.81658 kl: 2.45481 
+(epoch: 24, iters: 1200, time: 0.001, data: 0.008) nll: 0.24160 kl: 2.11620 
+(epoch: 24, iters: 1200, time: 0.268) MAE: 20.73729 RMSE: 38.34547 MAPE: 0.37357 
+End of epoch 24 / 30 	 Time Taken: 9 sec
+learning rate 0.0006364 -> 0.0005455
+(epoch: 25, iters: 1220, time: 0.001, data: 0.260) nll: -1.74161 kl: 1.62313 
+(epoch: 25, iters: 1240, time: 0.001, data: 0.007) nll: 1.07835 kl: 2.05335 
+(epoch: 25, iters: 1248, time: 0.273) MAE: 20.48987 RMSE: 37.84173 MAPE: 0.37830 
+End of epoch 25 / 30 	 Time Taken: 9 sec
+learning rate 0.0005455 -> 0.0004545
+(epoch: 26, iters: 1260, time: 0.002, data: 0.009) nll: 0.86797 kl: 2.43391 
+(epoch: 26, iters: 1280, time: 0.002, data: 0.009) nll: -1.72746 kl: 1.57660 
+(epoch: 26, iters: 1296, time: 0.283) MAE: 20.20971 RMSE: 37.67309 MAPE: 0.37266 
+End of epoch 26 / 30 	 Time Taken: 10 sec
+learning rate 0.0004545 -> 0.0003636
+(epoch: 27, iters: 1300, time: 0.002, data: 0.008) nll: -1.45249 kl: 1.93999 
+(epoch: 27, iters: 1320, time: 0.001, data: 0.017) nll: 0.82585 kl: 2.77970 
+(epoch: 27, iters: 1340, time: 0.001, data: 0.007) nll: 0.19096 kl: 2.39886 
+(epoch: 27, iters: 1344, time: 0.275) MAE: 21.16801 RMSE: 38.69906 MAPE: 0.37598 
+End of epoch 27 / 30 	 Time Taken: 9 sec
+learning rate 0.0003636 -> 0.0002727
+(epoch: 28, iters: 1360, time: 0.002, data: 0.005) nll: -0.38039 kl: 3.38031 
+(epoch: 28, iters: 1380, time: 0.001, data: 0.007) nll: -1.68875 kl: 2.20299 
+(epoch: 28, iters: 1392, time: 0.284) MAE: 21.00603 RMSE: 38.67557 MAPE: 0.36914 
+End of epoch 28 / 30 	 Time Taken: 10 sec
+learning rate 0.0002727 -> 0.0001818
+(epoch: 29, iters: 1400, time: 0.001, data: 0.005) nll: -1.63674 kl: 1.95087 
+(epoch: 29, iters: 1420, time: 0.002, data: 0.004) nll: 0.41839 kl: 2.78662 
+(epoch: 29, iters: 1440, time: 0.001, data: 0.008) nll: 0.37273 kl: 2.49385 
+(epoch: 29, iters: 1440, time: 0.253) MAE: 20.74541 RMSE: 38.35833 MAPE: 0.36804 
+End of epoch 29 / 30 	 Time Taken: 9 sec
+learning rate 0.0001818 -> 0.0000909
+(epoch: 30, iters: 1460, time: 0.002, data: 0.267) nll: 0.17491 kl: 2.44096 
+(epoch: 30, iters: 1480, time: 0.002, data: 0.010) nll: -1.48017 kl: 2.11790 
+./checkpoints/BJAir/hierarchical_PM25_20230701T023155/run_test.sh: 1: ./checkpoints/BJAir/hierarchical_PM25_20230701T023155/run_test.sh: source: not found
+No module named 'models.hierarchical_model'
+----------------- Options ---------------
+               batch_size: 128                           
+          checkpoints_dir: ./checkpoints/BJAir           	[default: ./checkpoints]
+                   config: config1                       
+            covariate_dim: 30                            
+             dataset_mode: BJAir                         	[default: ]
+               delete_col: ['u_speed', 'v_speed', 'latitude', 'longitude']
+            enable_visual: False                         
+                    epoch: best                          	[default: latest]
+                file_time: 20230701T023155               	[default: ]
+                  gpu_ids: 0                             	[default: -1]
+                init_gain: 0.02                          
+                init_type: xavier                        
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+         max_dataset_size: inf                           
+                    model: hierarchical                  	[default: ]
+                     name: hierarchical_PM25_20230701T023155	[default: None]
+              num_threads: 0                             
+                    phase: test                          
+                pred_attr: PM25_Concentration            
+               print_freq: 10                            
+                     seed: 2023                          
+           serial_batches: True                          
+              spatial_dim: 16                            
+                    t_len: 24                            
+                  use_adj: True                          
+                  verbose: False                         
+                    y_dim: 1                             
+----------------- End -------------------
+----------------- Model Configurations ---------------
+             tcn_channels: [16, 32, 64]                  
+          latent_channels: [16, 32, 64]                  
+              emd_channel: 16                            
+        num_latent_layers: 1                             
+   observation_hidden_dim: 128                           
+   num_observation_layers: 3                             
+          tcn_kernel_size: 3                             
+                  dropout: 0.1                           
+----------------- End -------------------
+Loading station locations...
+Computing normalization info...
+Loading air quality features...
+Data format check passed!!!
+dataset [BJAirDataset] for [test] was created
+The number of training samples = 36
+No module named 'models.hierarchical_model'
+initialize network with xavier
+model [HierarchicalModel] was created
+loading the model from ./checkpoints/BJAir/hierarchical_PM25_20230701T023155/best_net_HierarchicalNP.pth
+---------- Networks initialized -------------
+[Network HierarchicalNP] Total number of parameters : 0.108 M
+-----------------------------------------------
+(epoch: -1, iters: 0, time: 0.899) MAE: 15.47936 RMSE: 25.01091 MAPE: 0.38480 
+(epoch: 30, iters: 1488, time: 0.257) MAE: 21.36106 RMSE: 39.10685 MAPE: 0.36746 
+End of epoch 30 / 30 	 Time Taken: 10 sec
+learning rate 0.0000909 -> 0.0000000
+Run the evaluation.

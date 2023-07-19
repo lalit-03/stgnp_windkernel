@@ -1,0 +1,34 @@
+================ Metrics (Thu Jul  6 03:06:27 2023) ================
+(epoch: 0, iters: 48, time: 0.453) MAE: 69.16677 RMSE: 90.65285 MAPE: 2.56992 
+(epoch: 1, iters: 96, time: 0.428) MAE: 68.71110 RMSE: 91.51743 MAPE: 2.43591 
+(epoch: 2, iters: 144, time: 0.411) MAE: 49.33856 RMSE: 60.79510 MAPE: 2.41755 
+(epoch: 3, iters: 192, time: 0.403) MAE: 41.82526 RMSE: 53.09084 MAPE: 2.18154 
+(epoch: 4, iters: 240, time: 0.401) MAE: 42.53343 RMSE: 54.37888 MAPE: 1.99690 
+(epoch: 5, iters: 288, time: 0.460) MAE: 42.21962 RMSE: 54.77974 MAPE: 1.84109 
+(epoch: 6, iters: 336, time: 0.426) MAE: 35.80099 RMSE: 47.53730 MAPE: 1.70709 
+(epoch: 7, iters: 384, time: 0.476) MAE: 34.59772 RMSE: 46.58180 MAPE: 1.58170 
+(epoch: 8, iters: 432, time: 0.480) MAE: 32.45505 RMSE: 44.51763 MAPE: 1.46393 
+(epoch: 9, iters: 480, time: 0.393) MAE: 34.00227 RMSE: 46.95363 MAPE: 1.35009 
+(epoch: 10, iters: 528, time: 0.413) MAE: 29.85115 RMSE: 42.47745 MAPE: 1.25927 
+(epoch: 11, iters: 576, time: 0.402) MAE: 28.14715 RMSE: 41.30904 MAPE: 1.18198 
+(epoch: 12, iters: 624, time: 0.422) MAE: 28.16599 RMSE: 41.50529 MAPE: 1.09193 
+(epoch: 13, iters: 672, time: 0.451) MAE: 26.74395 RMSE: 40.62088 MAPE: 1.03750 
+(epoch: 14, iters: 720, time: 0.408) MAE: 26.99194 RMSE: 41.06020 MAPE: 0.95286 
+(epoch: 15, iters: 768, time: 0.466) MAE: 26.10188 RMSE: 40.34808 MAPE: 0.88961 
+(epoch: 16, iters: 816, time: 0.407) MAE: 25.43812 RMSE: 39.89640 MAPE: 0.83005 
+(epoch: 17, iters: 864, time: 0.422) MAE: 25.52739 RMSE: 40.42030 MAPE: 0.76950 
+(epoch: 18, iters: 912, time: 0.398) MAE: 25.22532 RMSE: 40.36895 MAPE: 0.71592 
+(epoch: 19, iters: 960, time: 0.449) MAE: 24.80252 RMSE: 40.04477 MAPE: 0.68354 
+(epoch: 20, iters: 1008, time: 0.439) MAE: 28.56649 RMSE: 44.57288 MAPE: 0.64415 
+(epoch: 21, iters: 1056, time: 0.419) MAE: 24.44515 RMSE: 40.24382 MAPE: 0.59108 
+(epoch: 22, iters: 1104, time: 0.465) MAE: 25.39595 RMSE: 41.86040 MAPE: 0.50969 
+(epoch: 23, iters: 1152, time: 0.430) MAE: 23.39280 RMSE: 39.57911 MAPE: 0.46058 
+(epoch: 24, iters: 1200, time: 0.407) MAE: 23.79769 RMSE: 40.20087 MAPE: 0.43063 
+(epoch: 25, iters: 1248, time: 0.426) MAE: 24.02005 RMSE: 40.46228 MAPE: 0.43254 
+(epoch: 26, iters: 1296, time: 0.467) MAE: 23.37462 RMSE: 39.76595 MAPE: 0.43454 
+(epoch: 27, iters: 1344, time: 0.447) MAE: 24.48781 RMSE: 40.81266 MAPE: 0.43698 
+(epoch: 28, iters: 1392, time: 0.486) MAE: 24.83274 RMSE: 41.52121 MAPE: 0.42951 
+(epoch: 29, iters: 1440, time: 0.418) MAE: 24.10727 RMSE: 40.68541 MAPE: 0.42807 
+(epoch: 30, iters: 1488, time: 0.407) MAE: 24.68143 RMSE: 41.33822 MAPE: 0.42600 
+================ Metrics (Thu Jul  6 03:13:40 2023) ================
+(epoch: -1, iters: 0, time: 1.071) MAE: 16.91059 RMSE: 26.90677 MAPE: 0.30834 

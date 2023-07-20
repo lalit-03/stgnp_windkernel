@@ -38,9 +38,9 @@ class BJAirDataset(BaseDataset):
         data_path = 'dataset/bjair/NP/processed_raw_with_wind.csv'
         meta_path = 'dataset/bjair/NP/meta_data.pkl'
         
-        # for random test nodes, replace path with none
+        # for random test nodes, replace path
         # test_nodes_path = 'dataset/bjair/NP/test_nodes.npy'
-        test_nodes_path = None
+        test_nodes_path = " "
 
         self.A = self.load_loc(aq_location_path, build_adj=opt.use_adj)
         self.raw_data, norm_info = self.load_feature(data_path, meta_path, self.time_division[opt.phase], opt.delete_col)

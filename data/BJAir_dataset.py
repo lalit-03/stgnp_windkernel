@@ -46,7 +46,8 @@ class BJAirDataset(BaseDataset):
         self.raw_data, norm_info = self.load_feature(data_path, meta_path, self.time_division[opt.phase], opt.delete_col)
 
         # get data division index
-        self.test_node_index = self.get_node_division(test_nodes_path, num_nodes=self.raw_data['pred'].shape[0])
+        # self.test_node_index = self.get_node_division(test_nodes_path, num_nodes=self.raw_data['pred'].shape[0])
+        self.test_node_index = self.get_node_division(test_nodes_path, num_nodes=12)
         self.train_node_index = np.setdiff1d(np.arange(self.raw_data['pred'].shape[0]), self.test_node_index)
 
         # add norm info

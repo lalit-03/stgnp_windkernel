@@ -346,7 +346,7 @@ class BaseDataset(data.Dataset, ABC):
             print('Test Nodes are: ', test_nodes)
         else:
             print('No testing nodes. Randomly divide nodes for testing!')
-            rand = np.random.RandomState(0)  # Fixed random output
+            # rand = np.random.RandomState(0)  # Fixed random output
             # test_nodes = rand.choice(list(range(0, num_nodes)), int(num_nodes * test_node_ratio), replace=False)
             test_nodes = rand.choice(list(range(0, num_nodes)), 12, replace = False)
             print('Test Nodes are: ', test_nodes)

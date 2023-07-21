@@ -103,13 +103,14 @@ if __name__ == '__main__':
     with open(os.path.join(model.save_dir,'run_test.sh'), 'w') as f:
         f.write('source activate pytorch-py39\n')
         cmd = 'python test.py --model {} --dataset_mode {} ' \
-                  '--pred_attr {} --gpu_ids {} --config {} --file_time {} --epoch best'.format(
+                  '--pred_attr {} --gpu_ids {} --config {} --file_time {} --epoch best --seed {}'.format(
             opt.model,
             opt.dataset_mode,
             opt.pred_attr,
             opt.gpu_ids[0],
             opt.config,
-            opt.file_time)
+            opt.file_time,
+            opt.seed)
         f.write(cmd)
 
     os.system('chmod u+x '+ os.path.join(model.save_dir,'run_test.sh'))

@@ -343,10 +343,12 @@ class BaseDataset(data.Dataset, ABC):
     def get_node_division(self, test_nodes_path, num_nodes=None, test_node_ratio=3/10):
         if os.path.isfile(test_nodes_path):
             test_nodes = np.load(test_nodes_path)
+            print('Test Nodes are: ', test_nodes)
         else:
             print('No testing nodes. Randomly divide nodes for testing!')
             rand = np.random.RandomState(0)  # Fixed random output
-            test_nodes = rand.choice(list(range(0, num_nodes)), int(num_nodes * test_node_ratio), replace=False)
+            # test_nodes = rand.choice(list(range(0, num_nodes)), int(num_nodes * test_node_ratio), replace=False)
+            test_nodes = rand.choice(list(range(0, num_nodes)), 12, replace = False)
             print('Test Nodes are: ', test_nodes)
             np.save(test_nodes_path, test_nodes)
         return test_nodes

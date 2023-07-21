@@ -5,7 +5,7 @@ config=$4
 gpu_ids=$5
 seed=$6
 
-for ((i=0; i<=4; i++))
+for ((i=0; i<=6; i++))
 do
 python train.py --model ${model}\
   --dataset_mode ${dataset}\

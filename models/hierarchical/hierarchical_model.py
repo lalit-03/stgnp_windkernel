@@ -180,7 +180,8 @@ class HierarchicalNP(nn.Module):
         # x = torch.tensor(1.)
         
         def process_data(targets, contexts, A):
-            A_ = torch.exp(torch.log(A) / (self.lenscale)**2)
+            # A_ = torch.exp(torch.log(A) / (self.lenscale)**2)
+            A_ = A
             # A_ = torch.exp(torch.log(A) / (self.lenscale/x)**2)
             # A_ = torch.exp(torch.log(A)/ (torch.exp(self.lenscale)**2))
             A_1hop = (A_[targets, :][:, contexts]).unsqueeze(0)
